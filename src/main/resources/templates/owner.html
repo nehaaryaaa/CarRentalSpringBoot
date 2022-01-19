@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Owner</title>
+<link rel="stylesheet" href="bootstrap.min.css"/>
+</head>
+<body>
+<h1 style="background-color: lightgreen;
+    color: green;
+    border:darkgreen;
+    height: 100px;
+    text-align: center;
+    padding: 20px;">Car Rental System</h1>
+
+<nav>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" style="display:flex; list-style-type:none;">
+        <li><a style="color: lightgreen; background-color:darkgreen; padding: 20px; text-decoration:none;" th:href="@{/owner}">Home</a></li>
+        <li><a style="color: lightgreen; background-color:darkgreen; padding: 20px; text-decoration:none;" th:href = "@{/cars/new}">Add Car</a></li>
+        <li><a style="color: lightgreen; background-color:darkgreen; padding: 20px; text-decoration:none;" th:href="@{/cars}">View Car</a></li>
+        <li><a style="color: lightgreen; background-color:darkgreen; padding: 20px; text-decoration:none;" th:href="@{/ownerlogout}">Logout</a></li>
+       </ul>
+
+    </div><!-- /.navbar-collapse -->
+</nav>
+<br><br>
+
+
+
+
+<script src="jquery.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <footer>
+    <div style="background-color: black; color: whitesmoke; height: 50px; text-align:center; margin: 20px;">
+        <p style="margin-top:500px; font-size:13px; color:#aaa; margin-bottom:0; padding:20px">CarRentalSystem Copyright@2021</p>
+    </div>
+</footer> 
+</body>
+</html>

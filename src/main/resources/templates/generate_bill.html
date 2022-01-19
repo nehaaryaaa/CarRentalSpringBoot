@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Create Owner</title>
+<link rel="stylesheet" href="bootstrap.min.css"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <h1 style="background-color: lightgreen;
+  color: green;
+  border:darkgreen;
+  height: 100px;
+  text-align: center;
+  padding: 20px;">Car Rental System</h1>
+
+
+<nav>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav" style="display:flex; list-style-type:none;">
+        <li><a style="color: lightgreen; background-color:darkgreen; padding: 20px; text-decoration:none;" th:href="@{/admin}">Home</a></li>
+        
+        <li><a style="color: lightgreen; background-color:darkgreen; padding: 20px; text-decoration:none;" th:href="@{/admin/viewcars}">View Car</a></li>
+        <li><a style="color: lightgreen; background-color:darkgreen; padding: 20px; text-decoration:none;" th:href="@{/admin/issuecars/new}">Issue Car</a></li>
+        <li><a style="color: lightgreen; background-color:darkgreen; padding: 20px; text-decoration:none;" th:href="@{/admin/viewissuedcars}">View Issued Car</a></li>
+       
+        <li><a style="color: lightgreen; background-color:darkgreen; padding: 20px; text-decoration:none;" th:href = "@{/admin/owners/new}" > Add Owner</a></li>
+        <li><a style="color: lightgreen; background-color:darkgreen; padding: 20px; text-decoration:none;" th:href="@{/admin/owners}">View Owners</a></li>
+        
+        <li><a style="color: lightgreen; background-color:darkgreen; padding: 20px; text-decoration:none;" href="">Logout</a></li>
+       </ul>
+
+    </div><!-- /.navbar-collapse -->
+</nav>
+<br><br>
+
+<div style="background-color:#FF9966; height:700px; width:500px; margin:50px; padding:15px;">
+<h1 style="color:red;"> Billing Details </h1>
+<form action="#" th:object = "${issuebean}" method="post">
+<table style="border-collapse: separate; border-spacing: 0 20px;">
+	<tr>
+		<th>Car Id : </th>
+		<td th:text = "${issuebean.car.carid}"></td>
+	</tr>
+	<tr>
+		<th>Car Registration No : </th>
+		<td th:text = "${issuebean.car.carregistrationno}"></td>
+	</tr>
+	<tr>
+		<th>Car Name : </th>
+		<td th:text = "${issuebean.car.carname}"></td>
+	</tr>
+	<tr>
+		<th>Cost Per Hour : </th>
+		<td th:text = "${issuebean.car.costpermile}"></td>
+	</tr>
+	<tr>
+		<th>Customer Id : </th>
+		<td th:text = "${issuebean.customerid}"></td>
+	</tr>
+	<tr>
+		<th>Customer Name : </th>
+		<td th:text = "${issuebean.customername}"></td>
+	</tr>
+	<tr>
+		<th>Customer Mobile : </th>
+		<td th:text = "${issuebean.customermobile}"></td>
+	</tr>
+	<tr>
+		<th>Duration (in Hours) : </th>
+		<td th:text = "${issuebean.durationinhours}"></td>
+	</tr>
+	<tr>
+		<th>Issued On : </th>
+		<td th:text = "${issuebean.issueddate}"></td>
+	</tr>
+	<tr>
+		<th>Return Status : </th>
+		<td th:text = "${issuebean.returnstatus}"></td>
+	</tr>
+	<tr>
+		<th><h4>Total Amount To Be Paid : Rs. &nbsp</h4></th>
+		<td th:text = "${issuebean.getDurationinhours()*issuebean.car.getCostpermile}"></td>
+	</tr>
+</table>
+
+	
+	</form>
+</div>
+
+
+  <footer>
+    <div style="background-color: black; color: whitesmoke; height: 50px; text-align:center; margin: 20px;">
+        <p style="margin-top:500px; font-size:13px; color:#aaa; margin-bottom:0; padding:20px">CarRentalSystemUsingSpringBoot Copyright@2021</p>
+    </div>
+</footer> 
+</body>
+</html>
